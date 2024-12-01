@@ -1,18 +1,15 @@
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-node';
 import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   preprocess: preprocess({
-    postcss: true
+    postcss: true,
   }),
 
   kit: {
-    adapter: adapter({
-      // Możesz dodać inne opcje adaptera, jeśli chcesz
-      // np. fallback: 'index.html'
-    })
-  }
+    adapter: adapter(),
+  },
 };
 
 export default config;
