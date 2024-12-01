@@ -9,8 +9,8 @@ const config = {
 
   kit: {
     adapter: adapter({
-      // Jeśli chcesz mieć fallback dla aplikacji SPA (Single Page Application), możesz dodać tę opcję:
-      // fallback: 'index.html',
+      // Możesz dodać inne opcje adaptera, jeśli chcesz
+      // np. fallback: 'index.html'
     })
   }
 };
