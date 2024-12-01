@@ -1,16 +1,23 @@
-import adapter from '@sveltejs/adapter-node';
+import adapter from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  // Consult https://github.com/sveltejs/svelte-preprocess
-  // for more information about preprocessors
+  // Ustawienia preprocessora
   preprocess: preprocess({
     postcss: true
   }),
 
   kit: {
-    adapter: adapter()
+    // Zmiana adaptera na static, odpowiedni dla Vercel
+    adapter: adapter({
+      // Możesz zmienić domyślny folder wyjściowy
+      // na przykład na 'build' jeśli to potrzebne
+      // fallback: 'index.html', // Jeśli potrzebujesz SPA, dodaj fallback
+    }),
+
+    // Dodaj opcjonalnie konfigurację folderu wyjściowego (Vercel)
+    target: '#svelte', // Określa, że nasz projekt będzie używać "svelte-target"
   }
 };
 
