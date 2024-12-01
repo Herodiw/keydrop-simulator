@@ -9,15 +9,11 @@ const config = {
   }),
 
   kit: {
-    // Zmiana adaptera na static, odpowiedni dla Vercel
+    // Zmieniamy adapter na static, odpowiedni dla Vercel
     adapter: adapter({
-      // Możesz zmienić domyślny folder wyjściowy
-      // na przykład na 'build' jeśli to potrzebne
-      // fallback: 'index.html', // Jeśli potrzebujesz SPA, dodaj fallback
-    }),
-
-    // Dodaj opcjonalnie konfigurację folderu wyjściowego (Vercel)
-    target: '#svelte', // Określa, że nasz projekt będzie używać "svelte-target"
+      // Możesz dodać fallback, jeśli aplikacja ma działać jako SPA (Single Page Application)
+      // fallback: 'index.html',
+    })
   }
 };
 
